@@ -11,41 +11,49 @@ Se implenentó el proyecto en el PASS Heroku, estando disponible en https://mi-n
 ## Consideraciones para probar los métodos en Postman:
 
 1) Para crear un producto el body es el siguiente completando los datos de los campos (mandatorio):
-{
-    "nombre": "",
-    "descripcion": "",
-    "codigo": "",
-    "foto": "",
-    "precio": "",
-    "stock": ""
-}
+    {
+       "nombre": "",
+       "descripcion": "",
+       "codigo": "",
+       "foto": "",
+       "precio": "",
+       "stock": ""
+    }
 
 El id y timestamp se asignan en el método.
 
 2) Para actualizar un producto el body es el siguiente (el id es opcional el resto mandatorio)
    
-{
-    "id": ,
-    "timestamp": ,
-    "nombre": "",
-    "descripcion": "",
-    "codigo": "",
-    "foto": "",
-    "precio": "",
-    "stock": ""
-}
+    {
+        "id": ,
+        "timestamp": ,
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": "",
+        "stock": ""
+    }
 
 Se busca por el id que viene en el parámetro del request y de encontrarlo lo reemplazo por el producto del body
 
 3)Para agregar un producto en el carrito, el body es el producto (el id es mandatorio, el resto opcional)
-{
-	"id": ,
-    "timestamp": ,
-    "nombre": "",
-    "descripcion": "",
-    "codigo": "",
-    "foto": "",
-    "precio": "",
-    "stock": ""
-}
+    {
+    	"id": ,
+        "timestamp": ,
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": "",
+        "stock": ""
+    }
 
+4) Para crear un carrito el body es el siguiente:
+
+    {
+        "direccion": "Juan B Justo 9B",
+        "email": "user@email.com"
+    }
+
+La fecha/hora, el id y la estructra para contener los productos los asigna en el momento de creación del carrito.
