@@ -66,9 +66,9 @@ export default {
 
     deleteByIdProductosByIdCarritosApi: async(req,res,next)=>{ //Elimina producto del carrito
         try{ 
-            let id = req.params.id
-            let idProd = req.params.id_prod
-            const resultado = await servicioCarrito.deleteByIdProductosByIdCarritos(id, idProd)
+            const id = req.params.id
+            const idProd = req.params.id_prod
+            const resultado = await servicioCarrito.deleteByIdProductosByIdCarritos(id,idProd)
             if(resultado){
                 res.json({ resultado: 'carrito actualizado' })
             } 
@@ -81,14 +81,14 @@ export default {
 
     postProdutoByIdCarritosApi: async(req,res,next)=>{ //Agrega producto al carrito
         try{ 
-            let id = req.params.id;
-            let productoNew = req.body //el producto viene en el body
-            let carrito = servicioCarrito.addProdutoByIdCarritos(id,productoNew) 
+            const id = req.params.id
+            const idProd = req.params.id_prod
+            const carrito = servicioCarrito.addProdutoByIdCarritos(id,idProd) 
             .then((carrito) => {
                 if(carrito){
                     res.json({ resultado: 'carrito actualizado' })
                 } 
-                else res.json({ error : 'carrito o producto no encontrado' })
+                else res.json({ error : 'carrito y/o producto no encontrado' })
             })
         }
         catch(error){

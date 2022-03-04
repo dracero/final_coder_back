@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "32e02637-40af-497f-99c9-5cb9d2613ebf",
+		"_postman_id": "5563ff64-3663-4d44-99d1-badd2a050986",
 		"name": "Programacion Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,7 +9,18 @@
 			"name": "Productos",
 			"item": [
 				{
-					"name": "Ingresa un producto",
+					"name": "3 Ingresa un producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"PRODUCTO_ID\", JSON.parse(responseBody).id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -44,7 +55,7 @@
 					"response": []
 				},
 				{
-					"name": "Obtiene todos los productos",
+					"name": "4 Obtiene todos los productos",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -70,7 +81,7 @@
 					"response": []
 				},
 				{
-					"name": "Obtiene un producto",
+					"name": "5 Obtiene un producto",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -81,7 +92,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/f35d8598-6252-4e8c-bfb0-3733eaf97d52",
+							"raw": "http://localhost:8080/api/productos/{{PRODUCTO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -90,14 +101,14 @@
 							"path": [
 								"api",
 								"productos",
-								"f35d8598-6252-4e8c-bfb0-3733eaf97d52"
+								"{{PRODUCTO_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Actualiza producto",
+					"name": "6 Actualiza producto",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -117,7 +128,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938",
+							"raw": "http://localhost:8080/api/productos/{{PRODUCTO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -126,14 +137,14 @@
 							"path": [
 								"api",
 								"productos",
-								"d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938"
+								"{{PRODUCTO_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Elimina un producto",
+					"name": "16 Elimina un producto",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -144,7 +155,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938",
+							"raw": "http://localhost:8080/api/productos/{{PRODUCTO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -153,7 +164,7 @@
 							"path": [
 								"api",
 								"productos",
-								"d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938"
+								"{{PRODUCTO_ID}}"
 							]
 						}
 					},
@@ -165,7 +176,18 @@
 			"name": "Carritos",
 			"item": [
 				{
-					"name": "Crea carrito",
+					"name": "7 Crea carrito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"CARRITO_ID\", JSON.parse(responseBody).id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -177,7 +199,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"direccion\": \"Juan B Justo 9B\",\r\n    \"email\": \"user@email.com\"\r\n}",
+							"raw": "{\r\n    \"direccion\": \"Juan B Justo 9B\",\r\n    \"email\": \"{{EMAIL}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -200,35 +222,7 @@
 					"response": []
 				},
 				{
-					"name": "Vende carrito (genera y guarda orden)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{ACCESS_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136/venta",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carritos",
-								"a5914d01-4c56-4314-bf72-0f782b20b136",
-								"venta"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Agrega productos al carrito",
+					"name": "8+ Agrega productos al carrito",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -240,7 +234,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"id\": \"1ef9b72f-4057-429b-aab6-bb93c350011d\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -248,7 +242,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136/productos",
+							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/productos/{{PRODUCTO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -257,17 +251,18 @@
 							"path": [
 								"api",
 								"carritos",
-								"a5914d01-4c56-4314-bf72-0f782b20b136",
-								"productos"
+								"{{CARRITO_ID}}",
+								"productos",
+								"{{PRODUCTO_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Lista productos del carrito",
+					"name": "9 Borra producto del carrito",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
@@ -276,7 +271,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/c4e7db1b-04a7-45d6-b274-6df9374773e1/productos",
+							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/productos/{{PRODUCTO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -285,70 +280,16 @@
 							"path": [
 								"api",
 								"carritos",
-								"c4e7db1b-04a7-45d6-b274-6df9374773e1",
-								"productos"
+								"{{CARRITO_ID}}",
+								"productos",
+								"{{PRODUCTO_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Lista carrito por id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{ACCESS_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/api/carritos/c4e7db1b-04a7-45d6-b274-6df9374773e1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carritos",
-								"c4e7db1b-04a7-45d6-b274-6df9374773e1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Lista carrito por email",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{ACCESS_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/api/carritos/pepe@pepe.com/usuario",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carritos",
-								"pepe@pepe.com",
-								"usuario"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Lista todos los carritos",
+					"name": "10 Lista todos los carritos",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -374,9 +315,9 @@
 					"response": []
 				},
 				{
-					"name": "Delete carrito",
+					"name": "11 Lista carrito por id",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
@@ -385,7 +326,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136",
+							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -394,14 +335,109 @@
 							"path": [
 								"api",
 								"carritos",
-								"a5914d01-4c56-4314-bf72-0f782b20b136"
+								"{{CARRITO_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Borra producto del carrito",
+					"name": "12 Lista carrito por email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/carritos/{{EMAIL}}/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carritos",
+								"{{EMAIL}}",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 Lista productos del carrito",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carritos",
+								"{{CARRITO_ID}}",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14 Vende carrito (genera y guarda orden)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"ORDEN_ID\", JSON.parse(responseBody).id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/venta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carritos",
+								"{{CARRITO_ID}}",
+								"venta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15 Delete carrito",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -412,7 +448,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136/productos/1ef9b72f-4057-429b-aab6-bb93c350011d",
+							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -421,9 +457,7 @@
 							"path": [
 								"api",
 								"carritos",
-								"a5914d01-4c56-4314-bf72-0f782b20b136",
-								"productos",
-								"1ef9b72f-4057-429b-aab6-bb93c350011d"
+								"{{CARRITO_ID}}"
 							]
 						}
 					},
@@ -435,7 +469,7 @@
 			"name": "Ordenes",
 			"item": [
 				{
-					"name": "Obtiene todas las ordenes",
+					"name": "17 Obtiene todas las ordenes",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -461,7 +495,7 @@
 					"response": []
 				},
 				{
-					"name": "Obtiene orden por id",
+					"name": "18 Obtiene orden por id",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -472,7 +506,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/ordenes/012c0428-d1d0-4890-a53b-886f1390e624",
+							"raw": "http://localhost:8080/api/ordenes/{{ORDEN_ID}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -481,14 +515,14 @@
 							"path": [
 								"api",
 								"ordenes",
-								"012c0428-d1d0-4890-a53b-886f1390e624"
+								"{{ORDEN_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Obtiene orden por email",
+					"name": "19 Obtiene orden por email",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -499,7 +533,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/ordenes/pepe@pepe.com/usuario",
+							"raw": "http://localhost:8080/api/ordenes/{{EMAIL}}/usuario",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -508,7 +542,7 @@
 							"path": [
 								"api",
 								"ordenes",
-								"pepe@pepe.com",
+								"{{EMAIL}}",
 								"usuario"
 							]
 						}
@@ -521,13 +555,14 @@
 			"name": "Usuarios",
 			"item": [
 				{
-					"name": "login",
+					"name": "2 login",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", JSON.parse(responseBody).access_token);"
+									"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", JSON.parse(responseBody).access_token);\r",
+									"postman.setEnvironmentVariable(\"EMAIL\", JSON.parse(responseBody).email);"
 								],
 								"type": "text/javascript"
 							}
@@ -560,7 +595,19 @@
 					"response": []
 				},
 				{
-					"name": "Registro",
+					"name": "1 Registro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", JSON.parse(responseBody).access_token);\r",
+									"postman.setEnvironmentVariable(\"EMAIL\", JSON.parse(responseBody).email);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -588,6 +635,12 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "email_usuario",
+			"value": ""
 		}
 	]
 }

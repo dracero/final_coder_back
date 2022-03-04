@@ -123,15 +123,13 @@ function addProducto(id){
                     location.reload();
                     return false;
                 }
-                fetch('/api/carritos/' + id + '/productos', {
+                fetch('/api/carritos/' + id + '/productos/' + document.getElementById('idProd-'+id).value, {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
                         'authorization': `Bearer ${localStorage.getItem('access_token')}`
-                    },
-                    //Agrego producto en el carrito como body del POST
-                    body: producto
+                    }
                 })
                     .then(res => res.text())
                     .then(res => {

@@ -76,12 +76,11 @@ export default {
         else return null //no existe el carrito
     },
 
-    addProdutoByIdCarritos: async(id,productoNew)=>{ //Agrega producto al carrito
-        console.log(productoNew)
+    addProdutoByIdCarritos: async(id,idProd)=>{ //Agrega producto al carrito
         let carrito = await carritosDao.getById(id) //obtengo el carrito
         if(carrito){
             const prodCarritos = carrito.productos
-            const pos = prodCarritos.findIndex(elemento => elemento.id == productoNew.id) //Verifico si el producto ya está en el carrito
+            const pos = prodCarritos.findIndex(elemento => elemento.id == idProd) //Verifico si el producto ya está en el carrito
             if(pos>=0){ //existe
                 carrito.productos[pos].cantidad += 1 //incremento en 1 la cantidad del producto
                 const operacion = carritosDao.update(carrito) //actualizo el carrito
@@ -89,10 +88,10 @@ export default {
                 else return null //falló la actualización del carritoreturn true     
             }
             else{ //No existe
-                const verificaProd = productosDao.getById(productoNew.id)
+                const verificaProd = productosDao.getById(idProd)
                 if(verificaProd){
                     const producto = {
-                        'id': productoNew.id,
+                        'id': idProd,
                         'cantidad': 1
                     }
                     carrito.productos.push(producto) //hago el push del producto en la clave producto del carrito

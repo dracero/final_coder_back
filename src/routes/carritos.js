@@ -29,11 +29,11 @@ routerCarritos.post('/', authentication,controllerCarritos.postCarritosApi)
 //DELETE /:id -> vacia y elimina un carrito según su id.
 routerCarritos.delete('/:id', authentication,controllerCarritos.deleteByIdCarritosApi)
 
-//DELETE /:id/productos/:id_prod -> elimina un producto del carrito (si hay mas de un producto con el mismo id borra el primero)
+//DELETE /:id/productos/:id_prod -> elimina un producto del carrito
 routerCarritos.delete('/:id/productos/:id_prod', authentication,controllerCarritos.deleteByIdProductosByIdCarritosApi)
 
-//POST :id/productos -> recibe el producto en el body y lo agrega a un carrito según su id.
-routerCarritos.post('/:id/productos', authentication,controllerCarritos.postProdutoByIdCarritosApi)
+//POST :id/productos -> recibe el producto y lo agrega a un carrito según su id.
+routerCarritos.post('/:id/productos/:id_prod', authentication,controllerCarritos.postProdutoByIdCarritosApi)
 
 //POST :id/venta -> recibe el carrito en el body y procede a la venta del mismo (lo procesa).
 routerCarritos.post('/:id/venta', authentication,controllerCarritos.postProcesaByIdCarritosApi)
