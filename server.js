@@ -1,12 +1,14 @@
 //Configuración general del servidor
 import express from 'express'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
+app.use(cors())
 
 /*-----------------------------------------------------------*/
 //websocket de chat
@@ -50,19 +52,24 @@ io.on('connection', socket => {
 /*-----------------------------------------------------------*/
 //Router para la API de ordenes
 import routerOrdenes from './src/routes/ordenes.js'
-app.use('/orden', routerOrdenes)
-/*-----------------------------------------------------------*/
-//Router para mensajes
-import routerMensajes from './src/routes/mensajes.js'
-app.use('/chat', routerMensajes)
+app.use('/api/ordenes', routerOrdenes)
+//Router para el front de ordenes
+import routerFrontOrdenes from './src/routes/ordenesFront.js'
+app.use('/ordenes', routerFrontOrdenes)
 /*-----------------------------------------------------------*/
 //Router para la API de productos
 import routerProductos from './src/routes/productos.js'
-app.use('/productos', routerProductos)
+app.use('/api/productos', routerProductos)
+//Router para el front de productos
+import routerFrontProductos from './src/routes/productosFront.js'
+app.use('/productos', routerFrontProductos)
 /*-----------------------------------------------------------*/
 //Router para la API de carritos
 import routerCarritos from './src/routes/carritos.js'
-app.use('/carrito', routerCarritos)
+app.use('/api/carritos', routerCarritos)
+//Router para el front de carritos
+import routerFrontCarritos from './src/routes/carritosFront.js'
+app.use('/carrito', routerFrontCarritos)
 /*-----------------------------------------------------------*/
 //Router para el login /logout /Register
 import routerLogin from './src/routes/login.js'
@@ -72,17 +79,9 @@ app.use('/', routerLogin)
 import routerInfo from './src/routes/info.js'
 app.use('/info', routerInfo)
 /*-----------------------------------------------------------*/
-//Router para el front de productos
-import routerFrontProductos from './src/routes/productosFront.js'
-app.use('/front-productos', routerFrontProductos)
-/*-----------------------------------------------------------*/
-//Router para el front de carritos
-import routerFrontCarritos from './src/routes/carritosFront.js'
-app.use('/front-carrito', routerFrontCarritos)
-/*-----------------------------------------------------------*/
-//Router para el front de ordenes
-import routerFrontOrdenes from './src/routes/ordenesFront.js'
-app.use('/front-ordenes', routerFrontOrdenes)
+//Router para mensajes
+import routerMensajes from './src/routes/mensajes.js'
+app.use('/chat', routerMensajes)
 /*-----------------------------------------------------------*/
 //Manejador de error a nivel aplicacion
 app.use((err, req, res, next) => {

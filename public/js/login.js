@@ -22,7 +22,7 @@ formLogin.addEventListener('submit', async e => {
   if (access_token) {
     localStorage.setItem("access_token", access_token)
     localStorage.setItem("email", email)
-    location.href = '/front-productos'
+    location.href = '/carrito'
   } else {
     location.href = '/login-error'
   }

@@ -29,13 +29,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/productos",
+							"raw": "http://localhost:8080/api/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"productos"
 							]
 						}
@@ -54,13 +55,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/productos",
+							"raw": "http://localhost:8080/api/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"productos"
 							]
 						}
@@ -79,15 +81,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/productos/da4c4aa2-0720-44a1-9e54-f7675d84161c",
+							"raw": "http://localhost:8080/api/productos/f35d8598-6252-4e8c-bfb0-3733eaf97d52",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"productos",
-								"da4c4aa2-0720-44a1-9e54-f7675d84161c"
+								"f35d8598-6252-4e8c-bfb0-3733eaf97d52"
 							]
 						}
 					},
@@ -106,7 +109,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"timestamp\": 1646091088707,\r\n    \"nombre\": \"Bochita\",\r\n    \"descripcion\": \"La mejor bocha\",\r\n    \"categoria\": \"Navidad\",\r\n    \"codigo\": 123,\r\n    \"foto\": \"https://cdn1.iconfinder.com/data/icons/christmas-ultra-color/60/026_-_Baubles-1024.png\",\r\n    \"precio\": \"98\",\r\n    \"stock\": \"100\"\r\n}",
+							"raw": "{\r\n        \"timestamp\": \"1646164754932\",\r\n        \"nombre\": \"test\",\r\n        \"descripcion\": \"Producto test\",\r\n        \"categoria\": \"dummy\",\r\n        \"codigo\": \"123\",\r\n        \"foto\": \"http://localhost:8080/images/IMG_20180917_104633.jpg\",\r\n        \"precio\": 130,\r\n        \"stock\": 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -114,15 +117,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/productos/10613837-c575-4187-93ff-df7e7c32f2ba",
+							"raw": "http://localhost:8080/api/productos/d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"productos",
-								"10613837-c575-4187-93ff-df7e7c32f2ba"
+								"d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938"
 							]
 						}
 					},
@@ -140,15 +144,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/productos/b4563e99-3601-43f6-b5ce-47ae87fe688a",
+							"raw": "http://localhost:8080/api/productos/d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"productos",
-								"b4563e99-3601-43f6-b5ce-47ae87fe688a"
+								"d88ac11f-69ef-44a8-b5d2-6d8fc4ad2938"
 							]
 						}
 					},
@@ -180,14 +185,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/carrito",
+							"raw": "http://localhost:8080/api/carritos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito"
+								"api",
+								"carritos"
 							]
 						}
 					},
@@ -205,15 +211,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito/483ed459-64b7-48b1-bf64-13ba58b2dbab/venta",
+							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136/venta",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
-								"483ed459-64b7-48b1-bf64-13ba58b2dbab",
+								"api",
+								"carritos",
+								"a5914d01-4c56-4314-bf72-0f782b20b136",
 								"venta"
 							]
 						}
@@ -233,7 +240,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"id\": \"10613837-c575-4187-93ff-df7e7c32f2ba\",\r\n        \"timestamp\": 1646091088707,\r\n        \"nombre\": \"Bochita\",\r\n        \"descripcion\": \"La mejor bocha\",\r\n        \"categoria\": \"Navidad\",\r\n        \"codigo\": \"123\",\r\n        \"foto\": \"https://cdn1.iconfinder.com/data/icons/christmas-ultra-color/60/026_-_Baubles-1024.png\",\r\n        \"precio\": \"98\",\r\n        \"stock\": \"10\"\r\n    }",
+							"raw": "{\r\n        \"id\": \"1ef9b72f-4057-429b-aab6-bb93c350011d\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,15 +248,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/carrito/283ea959-73c2-42d0-8944-a4a2e08a1919/productos",
+							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
-								"283ea959-73c2-42d0-8944-a4a2e08a1919",
+								"api",
+								"carritos",
+								"a5914d01-4c56-4314-bf72-0f782b20b136",
 								"productos"
 							]
 						}
@@ -268,15 +276,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito/283ea959-73c2-42d0-8944-a4a2e08a1919/productos",
+							"raw": "http://localhost:8080/api/carritos/c4e7db1b-04a7-45d6-b274-6df9374773e1/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
-								"283ea959-73c2-42d0-8944-a4a2e08a1919",
+								"api",
+								"carritos",
+								"c4e7db1b-04a7-45d6-b274-6df9374773e1",
 								"productos"
 							]
 						}
@@ -295,15 +304,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito/283ea959-73c2-42d0-8944-a4a2e08a1919",
+							"raw": "http://localhost:8080/api/carritos/c4e7db1b-04a7-45d6-b274-6df9374773e1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
-								"283ea959-73c2-42d0-8944-a4a2e08a1919"
+								"api",
+								"carritos",
+								"c4e7db1b-04a7-45d6-b274-6df9374773e1"
 							]
 						}
 					},
@@ -321,14 +331,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito/pepe@pepe.com/usuario",
+							"raw": "http://localhost:8080/api/carritos/pepe@pepe.com/usuario",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
+								"api",
+								"carritos",
 								"pepe@pepe.com",
 								"usuario"
 							]
@@ -348,14 +359,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito",
+							"raw": "http://localhost:8080/api/carritos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito"
+								"api",
+								"carritos"
 							]
 						}
 					},
@@ -373,15 +385,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito/71096b9b-132d-418a-995f-6c99ccd7b5e0",
+							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
-								"71096b9b-132d-418a-995f-6c99ccd7b5e0"
+								"api",
+								"carritos",
+								"a5914d01-4c56-4314-bf72-0f782b20b136"
 							]
 						}
 					},
@@ -399,17 +412,104 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/carrito/283ea959-73c2-42d0-8944-a4a2e08a1919/productos/10613837-c575-4187-93ff-df7e7c32f2ba",
+							"raw": "http://localhost:8080/api/carritos/a5914d01-4c56-4314-bf72-0f782b20b136/productos/1ef9b72f-4057-429b-aab6-bb93c350011d",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"carrito",
-								"283ea959-73c2-42d0-8944-a4a2e08a1919",
+								"api",
+								"carritos",
+								"a5914d01-4c56-4314-bf72-0f782b20b136",
 								"productos",
-								"10613837-c575-4187-93ff-df7e7c32f2ba"
+								"1ef9b72f-4057-429b-aab6-bb93c350011d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ordenes",
+			"item": [
+				{
+					"name": "Obtiene todas las ordenes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/ordenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ordenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtiene orden por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/ordenes/012c0428-d1d0-4890-a53b-886f1390e624",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ordenes",
+								"012c0428-d1d0-4890-a53b-886f1390e624"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtiene orden por email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/ordenes/pepe@pepe.com/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ordenes",
+								"pepe@pepe.com",
+								"usuario"
 							]
 						}
 					},
@@ -460,7 +560,7 @@
 					"response": []
 				},
 				{
-					"name": "signup",
+					"name": "Registro",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -474,97 +574,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/signup",
+							"raw": "http://localhost:8080/registro",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"signup"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Ordenes",
-			"item": [
-				{
-					"name": "Obtiene todas las ordenes",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{ACCESS_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/orden",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"orden"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtiene orden por id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{ACCESS_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/orden/505db80e-b8a5-4461-b4a0-1485c0d69821",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"orden",
-								"505db80e-b8a5-4461-b4a0-1485c0d69821"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtiene orden por email",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{ACCESS_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/orden/pepe@pepe.com/usuario",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"orden",
-								"pepe@pepe.com",
-								"usuario"
+								"registro"
 							]
 						}
 					},

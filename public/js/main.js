@@ -12,4 +12,4 @@
     }
 })()
 //sino prosigue la ejecución
-location.href = '/front-productos'
+location.href = '/carrito'

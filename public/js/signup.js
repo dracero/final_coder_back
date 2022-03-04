@@ -12,7 +12,7 @@ formSignup.addEventListener('submit', async e => {
     telefono: formSignup[5].value,
   }
 
-  const respuesta = await fetch('/signup', {
+  const respuesta = await fetch('/registro', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -30,6 +30,6 @@ formSignup.addEventListener('submit', async e => {
     localStorage.setItem("email", email)
     location.href = '/'
   } else {
-    location.href = '/signup-error'
+    location.href = '/registro-error'
   }
 })

@@ -12,7 +12,7 @@
     }
 })()
 //Métodos de la API de carritos, en los métodos se incorpora el token en el header.
-let url = "/carrito/" + localStorage.getItem('email') + "/usuario"
+let url = "/api/carritos/" + localStorage.getItem('email') + "/usuario"
 fetch (url, {
     method: 'GET',
     headers: {
@@ -49,7 +49,7 @@ fetch (url, {
     })
 
 function deleteCarrito(id){
-    fetch('/carrito/' + id, {
+    fetch('/api/carritos/' + id, {
         method: 'DELETE',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -64,7 +64,7 @@ function deleteCarrito(id){
 }
 
 function getCarrito(id){
-    fetch('/carrito/' + id + '/productos', {
+    fetch('/api/carritos/' + id + '/productos', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -79,7 +79,7 @@ function getCarrito(id){
 }
 
 function addCarrito(){
-    fetch('/carrito', {
+    fetch('/api/carritos', {
         method: 'POST',
         headers: {
             'Accept': '*/*',
@@ -110,7 +110,7 @@ function addProducto(id){
     if(!document.getElementById('idProd-'+id).value) alert('Debe ingresar un producto')
     else{
         //Obtiene el producto
-        fetch('/productos/' + document.getElementById('idProd-'+id).value, {
+        fetch('/api/productos/' + document.getElementById('idProd-'+id).value, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -123,7 +123,7 @@ function addProducto(id){
                     location.reload();
                     return false;
                 }
-                fetch('/carrito/' + id + '/productos', {
+                fetch('/api/carritos/' + id + '/productos', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -146,7 +146,7 @@ function addProducto(id){
 function delProducto(id){
     if(!document.getElementById('idProd-'+id).value) alert('Debe ingresar un producto')
     else{
-        fetch('/carrito/' + id + '/productos/' +  document.getElementById('idProd-'+id).value, {
+        fetch('/api/carritos/' + id + '/productos/' +  document.getElementById('idProd-'+id).value, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -162,7 +162,7 @@ function delProducto(id){
 }
 
 function finalizarCompra(id){
-    fetch('/carrito/' + id + '/venta', {
+    fetch('/api/carritos/' + id + '/venta', {
         method: 'POST',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access_token')}`

@@ -8,9 +8,9 @@ import controllerLogin from '../controllers/login.js'
 import {authentication} from '../../utils/jwt.js'
 /*-----------------------------------------------------------*/
 //Register
-routerLogin.get('/signup', controllerLogin.getRegister)
-routerLogin.post('/signup', controllerLogin.postRegister)
-routerLogin.get('/signup-error', controllerLogin.getRegisterError)
+routerLogin.get('/registro', controllerLogin.getRegister)
+routerLogin.post('/registro', controllerLogin.postRegister)
+routerLogin.get('/registro-error', controllerLogin.getRegisterError)
 /*-----------------------------------------------------------*/
 //Login
 routerLogin.get('/login', controllerLogin.getLogin)

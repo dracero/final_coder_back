@@ -12,7 +12,7 @@
     }
 })()
 //Métodos de la API de productos, en los métodos se incorpora el token en el header.
-let url = "/productos"
+let url = "/api/productos"
 fetch (url, {
     method: 'GET',
     headers: {
@@ -48,7 +48,7 @@ fetch (url, {
     })
 
 function deleteProducto(id){
-    fetch('/productos/' + id, {
+    fetch('/api/productos/' + id, {
         method: 'DELETE',
         headers: {
           'authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -63,7 +63,7 @@ function deleteProducto(id){
 }
 
 function getProducto(id){
-    fetch('/productos/' + id, {
+    fetch('/api/productos/' + id, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -78,7 +78,7 @@ function getProducto(id){
 }
 
 function addProducto(){
-    fetch('/productos', {
+    fetch('/api/productos', {
         method: 'POST',
         headers: {
             'Accept': '*/*',
@@ -110,7 +110,7 @@ function addProducto(){
 }
 
 function updateProducto(id){
-    fetch('/productos/' + id, {
+    fetch('/api/productos/' + id, {
         method: 'PUT',
         headers: {
             'Accept': '*/*',

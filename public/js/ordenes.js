@@ -12,7 +12,7 @@
     }
 })()
 //Métodos de la API de ordenes, en los métodos se incorpora el token en el header.
-let url = "/orden/" + localStorage.getItem('email') + "/usuario"
+let url = "/api/ordenes/" + localStorage.getItem('email') + "/usuario"
 fetch (url, {
     method: 'GET',
     headers: {
@@ -41,7 +41,7 @@ fetch (url, {
     })
 
 function getOrden(id){
-    fetch('/orden/' + id, {
+    fetch('/api/ordenes/' + id, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('access_token')}`
