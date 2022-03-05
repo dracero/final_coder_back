@@ -27,6 +27,7 @@ export default {
         const user = usuarioSignup
         user.password = createHash(usuarioSignup.password) //encripta el password
         await usuariosDao.create(user)
+        
         //Envio de mail al administrador
         let cuerpo =
             `<h3>Se ha registrado un nuevo usuario</h3>
@@ -39,20 +40,17 @@ export default {
             <a>Teléfono: ${usuarioSignup.telefono}</a>
             `
         const mailOptions = {
-            from: MAIL_NOTIFICACIONES,
+            from: '',
             to: MAIL_NOTIFICACIONES,
             subject: 'Nuevo usuario',
             html: cuerpo
         }
-        try{
-            const info = transporter.sendMail(mailOptions)
-            .then((info) =>{
-                console.log(info)
-            })
-        }
-        catch(error){
-            console.error(error)
-        }
+        
+        const info = transporter.sendMail(mailOptions)
+          .then((info) =>{
+            console.log(info)
+          })
+        
         const access_token = generateAuthToken(email)
         const response =
         {

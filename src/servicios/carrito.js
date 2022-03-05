@@ -115,11 +115,13 @@ export default {
             let producto = []
             let item = {}
             let total = 0
+
             //Confeccion de la orden
             const fyh= new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
             orden = Object.assign({fyh: fyh}, orden)
             orden = Object.assign({estado: 'generada'},orden)
             orden = Object.assign({email: carrito.email}, orden)
+
             //recorro los productos que tiene el carrito e inserto los item c/descripcion, precio, subtotal en la orden)
             for(producto of carrito.productos){
                 prod = await productosDao.getById(producto.id)
@@ -133,31 +135,31 @@ export default {
                 orden.items.push(item)
                 total += producto.cantidad * prod.precio
             }
+
             let ordenEmail = orden
             //Adapta (covierte) la orden json a html para el envío del email
             ordenEmail= JSON.stringify( ordenEmail, null, '&nbsp;' ).split( '\n' ).join( '<br>' )
             const reemplazar = /[\[\]{},\"]/g
             ordenEmail = ordenEmail.replace(reemplazar, '')
+            
             //Guarda la orden para obtener el id
             const idOrden = await ordenesDao.save(orden)
+            
             //Envía email            
             const mailOptions = {
-                from: MAIL_NOTIFICACIONES,
+                from: '',
                 to: MAIL_NOTIFICACIONES + ';' + orden.email,
                 subject: 'eCommerse - Nueva orden: ' + idOrden,
                 html: `<h3>Se ha generado la siguiente orden:</h3>${ordenEmail}<h3>Importe total: $${total} Pesos.</h3>`
             }
-            try{
-                const info = transporter.sendMail(mailOptions)
-                  .then((info) =>{
-                    console.log(info)
-                })
-            }
-            catch(error){
-                console.error(error)
-            }
+            const info = transporter.sendMail(mailOptions)
+              .then((info) =>{
+                console.log(info)
+            })
+
             carrito.productos=[] //Elimina los productos del carrito luego de la venta
             await carritosDao.update(carrito) //update del carrito
+
             return idOrden
         }
         else return null //no se encontro el carrito
