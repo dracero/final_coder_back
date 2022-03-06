@@ -15,10 +15,10 @@ routerProductos.use((err, req, res, next) => {
 /*-----------------------------------------------------------*/
 // Rutas de API
 //GET -> devuelve todos los productos
-routerProductos.get('/',authentication,controllerProductos.getProductosApi)
+routerProductos.get('/',controllerProductos.getProductosApi)
  
 //GET /:id -> devuelve un producto según su id.
-routerProductos.get('/:id', authentication,controllerProductos.getByIdProductosApi)
+routerProductos.get('/:id',controllerProductos.getByIdProductosApi)
 
 //POST -> recibe y agrega un producto, y lo devuelve con su id asignado.
 routerProductos.post('/', authentication,controllerProductos.postProductosApi)
