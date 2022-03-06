@@ -3,6 +3,7 @@ import path from 'path'
 import {createHash, isValidPassword} from '../../utils/utilsLogin.js' 
 import { usuariosDao } from '../daos/usuarios/index.js'
 import transporter from '../../config/mailer.js'
+import config from '../../config/config.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -13,6 +14,9 @@ export default {
     register: async (usuarioSignup) => {
         let usuario = []
         const { email } = usuarioSignup
+        if (email == config.admin.username){
+            return null //no se puede registrar el usuario admin.
+        }
         //verifica mail si no se cumple la expresion regular no es mail (retorna null)
         if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
             return null //mail invalido
@@ -63,13 +67,22 @@ export default {
     login: async (usuarioLogin) => {
         let usuario = []
         const { email, password } = usuarioLogin
-        usuario = await usuariosDao.getByEmail({'email':email}) //buscar en la persistencia por email
-        if (usuario.length == 0) {
-            return null //usuario no registrado
+        if (email == config.admin.username){ //Es usuario admin
+            if(password != config.admin.password){
+                return null //password de admin incorrecto
+            }
+            config.setUserRol('admin')// usuario administrador
         }
-        const credencialesOk = usuario[0].email == email && isValidPassword(usuario[0].password,password)
-        if (!credencialesOk) {
-            return null //credenciales invalidas
+        else{ //no es el usuario admin, valida usuario en persistencia
+            usuario = await usuariosDao.getByEmail({'email':email}) //buscar en la persistencia por email
+            if (usuario.length == 0) {
+                return null //usuario no registrado
+            }
+            const credencialesOk = usuario[0].email == email && isValidPassword(usuario[0].password,password)
+            if (!credencialesOk) {
+                return null //credenciales invalidas
+            }
+            config.setUserRol('user')// usuario normal
         }
         const access_token = generateAuthToken(email)
         const response =

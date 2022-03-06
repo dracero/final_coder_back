@@ -2,7 +2,9 @@
 
 Se desarrolló un Front que interactua con el Backend. Mediate el Font se pueden realizar todas las operaciones, el carrito y las órdenes se muestran solo las que corresponden al usuario logueado. Info, los productos y mensajes se muestran en comun para todos los usuarios, salvo para los mensajes que en donde hay una vista de los mensajes del usuario logueado.
 
-Más allá del front el backend está toalmente expuesto mediante API REST, en el archivo excel en /docs/docs_apis.xlsx se detallan todos los métodos con sus endpoints, bodies si correspondiese y que devuelven. 
+Más allá del front el backend está toalmente expuesto mediante API REST, en el archivo excel en /docs/docs_apis.xlsx se detallan todos los métodos con sus endpoints, bodies si correspondiese y que devuelven.
+
+Existe un usuario admin que tiene acceso a la creación de los productos, modificación y eliminación. El usuario es admin@e.commerse y password 4dm1n el resto de los usuarios no tienen acceso a estos endpoints.
 
 Para probarlo mediante POSTMAN, en la carpeta postman del proyecto se encuetra la collection con todos los métodos implentados organizados en las carpetas: Productos, Carritos, Usuarios y Ordenes. El environment almacena las variables como el token e email luego del login o registro y luego se utilza en todas las operaciones envíandolo al backend en el header para su verificacion y autorización. También se almacenan el id de producto, carrito y orden.
 

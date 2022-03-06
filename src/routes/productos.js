@@ -1,11 +1,28 @@
 import controllerProductos from '../controllers/productos.js'
 import {authentication} from '../../utils/jwt.js'
+import config from '../../config/config.js'
 /*-----------------------------------------------------------*/
 import express from 'express'
 const { Router } = express
 const routerProductos = new Router()
 routerProductos.use(express.json())
 routerProductos.use(express.urlencoded({ extended: true }))
+/*-----------------------------------------------------------*/
+//Manejador de permisos a nivel de rutas
+routerProductos.use((req, res, next) => {
+    if(!config.getUserRol()){ //Si no es usuario admin chequea las rutas que un usuario normal no tiene acceso
+        if((req.baseUrl == '/api/productos') && (req.method == 'POST')){ //Agregar
+            return res.status(403).send({ error: -1, descripcion: 'ruta ' + req.baseUrl + ' metodo ' + req.method + ' no autorizada' })
+        }
+        if((req.baseUrl == '/api/productos') && (req.method == 'PUT')){ //Modificar
+            return res.status(403).send({ error: -1, descripcion: 'ruta ' + req.baseUrl + ' metodo ' + req.method + ' no autorizada' })
+        }
+        if((req.baseUrl == '/api/productos') && (req.method == 'DELETE')){ //Elininar
+            return res.status(403).send({ error: -1, descripcion: 'ruta ' + req.baseUrl + ' metodo ' + req.method + ' no autorizada' })
+        }
+    }
+    next()
+})
 /*-----------------------------------------------------------*/
 //Manejador de error a nivel router
 routerProductos.use((err, req, res, next) => {

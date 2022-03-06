@@ -6,6 +6,17 @@ routerFrontProductos.use(express.json())
 routerFrontProductos.use(express.urlencoded({ extended: true }))
 import logger from '../../utils/logger.js'
 import upload from '../../utils/upload.js'
+import config from '../../config/config.js'
+/*-----------------------------------------------------------*/
+//Manejador de permisos a nivel de rutas
+routerFrontProductos.use((req, res, next) => {
+  if(!config.getUserRol()){ //Si no es usuario admin chequea las rutas que un usuario normal no tiene acceso
+      if((req.originalUrl == '/productos/upload') && (req.method == 'POST')){ //Upload imagen
+          return res.status(403).send({ error: -1, descripcion: 'ruta ' + req.baseUrl + ' metodo ' + req.method + ' no autorizada' })
+      }
+  }
+  next()
+})
 /*-----------------------------------------------------------*/
 //Manejador de error a nivel router
 routerFrontProductos.use((err, req, res, next) => {
