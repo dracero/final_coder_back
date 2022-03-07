@@ -40,12 +40,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/productos",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"productos"
@@ -55,7 +53,7 @@
 					"response": []
 				},
 				{
-					"name": "4 Obtiene todos los productos",
+					"name": "1 Obtiene todos los productos",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -66,12 +64,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/productos",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/productos",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"productos"
@@ -81,7 +77,7 @@
 					"response": []
 				},
 				{
-					"name": "5 Obtiene un producto",
+					"name": "4 Obtiene un producto",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -92,12 +88,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/{{PRODUCTO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/productos/{{PRODUCTO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"productos",
@@ -108,7 +102,7 @@
 					"response": []
 				},
 				{
-					"name": "6 Actualiza producto",
+					"name": "5 Actualiza producto",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -128,12 +122,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/{{PRODUCTO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/productos/{{PRODUCTO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"productos",
@@ -144,7 +136,7 @@
 					"response": []
 				},
 				{
-					"name": "16 Elimina un producto",
+					"name": "22 Elimina un producto",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -155,12 +147,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/{{PRODUCTO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/productos/{{PRODUCTO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"productos",
@@ -176,7 +166,7 @@
 			"name": "Carritos",
 			"item": [
 				{
-					"name": "7 Crea carrito",
+					"name": "8 Crea carrito",
 					"event": [
 						{
 							"listen": "test",
@@ -207,12 +197,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/carritos",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos"
@@ -222,7 +210,7 @@
 					"response": []
 				},
 				{
-					"name": "8+ Agrega productos al carrito",
+					"name": "9 / 10 Agrega productos al carrito",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -242,12 +230,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/productos/{{PRODUCTO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{CARRITO_ID}}/productos/{{PRODUCTO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -260,7 +246,7 @@
 					"response": []
 				},
 				{
-					"name": "9 Borra producto del carrito",
+					"name": "11 Borra producto del carrito",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -271,12 +257,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/productos/{{PRODUCTO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{CARRITO_ID}}/productos/{{PRODUCTO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -289,7 +273,7 @@
 					"response": []
 				},
 				{
-					"name": "10 Lista todos los carritos",
+					"name": "12 Lista todos los carritos",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -300,12 +284,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos"
@@ -315,7 +297,7 @@
 					"response": []
 				},
 				{
-					"name": "11 Lista carrito por id",
+					"name": "13 Lista carrito por id",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -326,12 +308,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{CARRITO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -342,7 +322,7 @@
 					"response": []
 				},
 				{
-					"name": "12 Lista carrito por email",
+					"name": "14 Lista carrito por email",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -353,12 +333,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{EMAIL}}/usuario",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{EMAIL}}/usuario",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -370,7 +348,7 @@
 					"response": []
 				},
 				{
-					"name": "13 Lista productos del carrito",
+					"name": "15 Lista productos del carrito",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -381,12 +359,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/productos",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{CARRITO_ID}}/productos",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -398,7 +374,7 @@
 					"response": []
 				},
 				{
-					"name": "14 Vende carrito (genera y guarda orden)",
+					"name": "16 Vende carrito (genera y guarda orden)",
 					"event": [
 						{
 							"listen": "test",
@@ -420,12 +396,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}/venta",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{CARRITO_ID}}/venta",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -437,7 +411,7 @@
 					"response": []
 				},
 				{
-					"name": "15 Delete carrito",
+					"name": "17 Delete carrito",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -448,12 +422,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/carritos/{{CARRITO_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/carritos/{{CARRITO_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"carritos",
@@ -469,7 +441,7 @@
 			"name": "Ordenes",
 			"item": [
 				{
-					"name": "17 Obtiene todas las ordenes",
+					"name": "18 Obtiene todas las ordenes",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -480,12 +452,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/ordenes",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/ordenes",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"ordenes"
@@ -495,7 +465,7 @@
 					"response": []
 				},
 				{
-					"name": "18 Obtiene orden por id",
+					"name": "19 Obtiene orden por id",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -506,12 +476,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/ordenes/{{ORDEN_ID}}",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/ordenes/{{ORDEN_ID}}",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"ordenes",
@@ -522,7 +490,7 @@
 					"response": []
 				},
 				{
-					"name": "19 Obtiene orden por email",
+					"name": "20 Obtiene orden por email",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -533,12 +501,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/ordenes/{{EMAIL}}/usuario",
-							"protocol": "http",
+							"raw": "{{SERVER}}/api/ordenes/{{EMAIL}}/usuario",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"ordenes",
@@ -555,7 +521,7 @@
 			"name": "Usuarios",
 			"item": [
 				{
-					"name": "2 login",
+					"name": "7 login",
 					"event": [
 						{
 							"listen": "test",
@@ -573,7 +539,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"pepe@pepe.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"pipo@pipo.com\",\r\n    \"password\": \"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -581,12 +547,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/login",
-							"protocol": "http",
+							"raw": "{{SERVER}}/login",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
 							"path": [
 								"login"
 							]
@@ -595,7 +559,7 @@
 					"response": []
 				},
 				{
-					"name": "1 Registro",
+					"name": "2 / 21 login admin",
 					"event": [
 						{
 							"listen": "test",
@@ -613,7 +577,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"pipo@pipo.com\",\r\n    \"password\": \"1234\",\r\n    \"password1\": \"1234\",\r\n    \"nombre\": \"Pipo\",\r\n    \"apellido\": \"Chipolati\",\r\n    \"telefono\": \"+541144441234\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"admin@e.commerse\",\r\n    \"password\": \"4dm1n\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -621,12 +585,48 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/registro",
-							"protocol": "http",
+							"raw": "{{SERVER}}/login",
 							"host": [
-								"localhost"
+								"{{SERVER}}"
 							],
-							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6 Registro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", JSON.parse(responseBody).access_token);\r",
+									"postman.setEnvironmentVariable(\"EMAIL\", JSON.parse(responseBody).email);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pipo@pipo.com\",\r\n    \"password\": \"1234\",\r\n    \"password1\": \"1234\",\r\n    \"nombre\": \"Pipo\",\r\n    \"apellido\": \"Apellido\",\r\n    \"telefono\": \"+541144441234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/registro",
+							"host": [
+								"{{SERVER}}"
+							],
 							"path": [
 								"registro"
 							]
